@@ -141,6 +141,8 @@ jobs:
   #                               you have chia set up on a machine that does not have your credentials.
   # [OPTIONAL] pool_public_key: Your pool public key. Same information as the above.
   #
+  # [OPTIONAL] pool_contract_address: Your pool's contract address.
+  #
   # temporary_directory: Can be a single value or a list of values. This is where the plotting will take place. If you
   #                      provide a list, it will cycle through each drive one by one.
   # [OPTIONAL] temporary2_directory: Can be a single value or a list of values. This is an optional parameter to use in
@@ -193,6 +195,7 @@ jobs:
     max_plots: 999
     farmer_public_key:
     pool_public_key:
+    pool_contract_address:
     temporary_directory: Z:\Plotter
     temporary2_directory:
     destination_directory: J:\Plots
