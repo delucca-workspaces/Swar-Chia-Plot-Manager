@@ -6,6 +6,11 @@
 #  MAC OS EXAMPLE: /Applications/Chia.app/Contents/Resources/app.asar.unpacked/daemon/chia
 chia_location:
 
+# This variable defines which plotter binary you're using. It can be one of the following options:
+#
+# - chia (default if none provided)
+# - madmax
+backend: chia
 
 manager:
   # These are the config settings that will only be used by the plot manager.
@@ -86,6 +91,16 @@ progress:
   #                 information with the existing log file to calculate a progress percent.
   #   phase_weight: These are the weight to assign to each phase in the progress calculations. Typically, Phase 1 and 3
   #                 are the longest phases so they will hold more weight than the others.
+  #
+  # If you're using "madmax" backend, you should use the following config instead:
+  # phase1_line_end: 20
+  # phase2_line_end: 34
+  # phase3_line_end: 48
+  # phase4_line_end: 53
+  # phase1_weight: 33.4
+  # phase2_weight: 20.43
+  # phase3_weight: 42.29
+  # phase4_weight: 3.88
   phase1_line_end: 801
   phase2_line_end: 834
   phase3_line_end: 2474
@@ -125,6 +140,8 @@ jobs:
   #                               chia executable which results in your default keys being used. This is only needed if
   #                               you have chia set up on a machine that does not have your credentials.
   # [OPTIONAL] pool_public_key: Your pool public key. Same information as the above.
+  #
+  # [OPTIONAL] pool_contract_address: Your pool's contract address.
   #
   # temporary_directory: Can be a single value or a list of values. This is where the plotting will take place. If you
   #                      provide a list, it will cycle through each drive one by one.
@@ -178,6 +195,7 @@ jobs:
     max_plots: 999
     farmer_public_key:
     pool_public_key:
+    pool_contract_address:
     temporary_directory: Z:\Plotter
     temporary2_directory:
     destination_directory: J:\Plots
@@ -205,6 +223,7 @@ jobs:
     max_plots: 999
     farmer_public_key:
     pool_public_key:
+    pool_contract_address:
     temporary_directory:
       - Y:\Plotter1
       - Y:\Plotter2
